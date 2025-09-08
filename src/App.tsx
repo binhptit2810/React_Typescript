@@ -1,23 +1,21 @@
-import Bai01 from "./Session21/Bai01"
-import Bai02 from "./Session21/Bai02"
-import Bai03 from "./Session21/Bai03"
-import Bai04 from "./Session21/Bai04"
-import Bai05 from "./Session21/Bai05"
-import Bai06 from "./Session21/Bai06"
-import Bai07 from "./Session21/Bai07"
+import Ex01 from './Session22/Ex01';
+import Ex02 from './Session22/Ex02';
+import Ex03 from './Session22/Ex03';
+import Ex04 from './Session22/Ex04';
+import Ex05 from './Session22/Ex05';
+import Ex06 from './Session22/Ex06';
+import Ex07 from './Session22/Ex07';
 
-function App() {
+export default function App() {
   return (
-    <>
-      <Bai01 />
-      <Bai02 />
-      <Bai03 />
-      <Bai04 />
-      <Bai05 />
-      <Bai06 />
-      <Bai07 />
-    </>
-  )
+    <div>
+      <Ex01 />
+      <Ex02 />
+      <Ex03 />
+      <Ex04 />
+      <Ex05 />
+      <Ex06 />
+      <Ex07 />
+    </div>
+  );
 }
-
-export default App
