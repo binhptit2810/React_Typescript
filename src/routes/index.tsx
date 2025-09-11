@@ -1,79 +1,72 @@
 import { createBrowserRouter } from "react-router-dom";
-import NotFound from "../pages/NotFound";
-import ListUser from "../pages/ListUser";
-import UserDetail from "../pages/UserDetail";
-// import DefaultLayout from "../layouts/DefaultLayout";
-// import HomeSix from "../pages/HomeSix";
-// import ProductSix from "../pages/ProductSix";
-// import DetailSix from "../pages/DetailSix";
-// import Home from "../pages/Home";
-// import About from "../pages/About";
-// import Contact from "../pages/Contact";
-// import Login from "../pages/Login";
-// import Register from "../pages/Register";
+import React, { lazy, Suspense } from "react";
+
+import ProductDetail from "../Session26/ProductDetail";
+import Student from "../Session26/Student";
+import Student03 from "../Session26/Student03";
+import Student04 from "../Session26/Student04";
+import Login from "../Session26/Login";
+import PrivateRouter from "../Session26/PrivateRouter";
+import Account from "../Session26/Account";
+import Teams from "../Session26/Teams";
+import TeamsIndex from "../Session26/TeamIndex";
+import Team from "../Session26/Team";
+import Loading from "../Session26/Loading";   // import loading
+
+// Lazy import
+const LazyLoadComp = lazy(() => import("../Session26/LazyLoadComp"));
 
 const routers = createBrowserRouter([
-    // {
-    //     path: "/",
-    //     element: <Home />
-    // },
-    // {
-    //     path: "/about",
-    //     element: <About />
-    // },
-    // {
-    //     path: "/contact",
-    //     element: <Contact />
-    // },
-    // {
-    //     path: "/login",
-    //     element: <Login />
-    // },
-    // {
-    //     path: "/register",
-    //     element: <Register />
-    // },
-    // {
-    //     path: "*",
-    //     element: <NotFound />
-    // },
-    // Bài 6
-    // {
-    //     path: "/",
-    //     element: <DefaultLayout />,
-    //     children: [
-    //         { index: true, element: <HomeSix /> },
-    //         { path: "product", element: <ProductSix /> },
-    //         { path: "detail", element: <DetailSix /> },
-    //         { path: "*", element: <NotFound /> },
-    //     ],
-    // },
-    // Bài 7
-    // {
-    //     path: "/",
-    //     element: <CustomLink />
-    // },
-    // {
-    //     path: "/home-page",
-    //     element: <HomePage />
-    // },
-    // {
-    //     path: "*",
-    //     element: <NotFound />
-    // }
-    // Bài 8
     {
-        path: "/",
-        element: <ListUser />
+        path: "/login",
+        element: <Login />,
     },
     {
-        path: "/user-detail/:id",
-        element: <UserDetail />
+        path: "/account",
+        element: (
+            <PrivateRouter>
+                <Account />
+            </PrivateRouter>
+        ),
     },
     {
-        path: "*",
-        element: <NotFound />
-    }
+        path: "/product/:id",
+        element: <ProductDetail />,
+    },
+    {
+        path: "/student/:name",
+        element: <Student />,
+    },
+    {
+        path: "/student",
+        element: <Student03 />,
+    },
+    {
+        path: "/studentName",
+        element: <Student04 />,
+    },
+    {
+        path: "/teams",
+        element: <Teams />,
+        children: [
+            {
+                index: true,
+                element: <TeamsIndex />,
+            },
+            {
+                path: ":teamId",
+                element: <Team />,
+            },
+        ],
+    },
+    {
+        path: "/lazy",
+        element: (
+            <Suspense fallback={<Loading />}>
+                <LazyLoadComp />
+            </Suspense>
+        ),
+    },
+]);
 
-])
-export default routers
+export default routers;
