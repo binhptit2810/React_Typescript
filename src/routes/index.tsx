@@ -1,72 +1,95 @@
 import { createBrowserRouter } from "react-router-dom";
-import React, { lazy, Suspense } from "react";
-
-import ProductDetail from "../Session26/ProductDetail";
-import Student from "../Session26/Student";
-import Student03 from "../Session26/Student03";
-import Student04 from "../Session26/Student04";
-import Login from "../Session26/Login";
-import PrivateRouter from "../Session26/PrivateRouter";
-import Account from "../Session26/Account";
-import Teams from "../Session26/Teams";
-import TeamsIndex from "../Session26/TeamIndex";
-import Team from "../Session26/Team";
-import Loading from "../Session26/Loading";   // import loading
-
-// Lazy import
-const LazyLoadComp = lazy(() => import("../Session26/LazyLoadComp"));
+// import TaskList from "../Session27/TaskList";
+// import TaskDetail from "../Session27/TaskDetail";
+// import NavProduct from "../components/NavProduct";
+// import ProductDetail from "../Session26/ProductDetail";
+// import ProductList from "../Session27/ProductList";
+import BlogLayout from "../Session27/BlogLayout";
+import Posts from "../Session27/Posts";
+import PostDetail from "../Session27/PostDetail";
+// import NavProduct from "../components/NavProduct";
+// import ProductDetail from "../Session27/ProductDetail";
+// import Home from "../Session27/Home";
+// import About from "../Session27/About";
+// import Contact from "../Session27/Contact";
+// import Navbar from "../components/Navbar";
 
 const routers = createBrowserRouter([
+    // {
+    //     path: "/",
+    //     element: <Navbar />,
+    //     children: [
+    //         {
+    //             index: true,
+    //             element: <Home />
+    //         },
+    //         {
+    //             path: "about",
+    //             element: <About />
+    //         },
+    //         {
+    //             path: "contact",
+    //             element: <Contact />
+    //         }
+    //     ]
+    // }
+    // bài 2
+    // {
+    //     path: "/products",
+    //     element: <NavProduct />,
+    //     children: [
+    //         {
+    //             index: true,
+    //             element: <ProductList />
+    //         },
+    //         {
+    //             path: ":id",
+    //             element: <ProductDetail />
+    //         }
+    //     ]
+    // }
+    // bài 3 
+    // {
+    //     path: "/",
+    //     element: <TaskList />
+
+    // },
+    // {
+    //     path: ":id",
+    //     element: <TaskDetail />
+    // }
+    // bài 04
+    // {
+    //     path: "/products",
+    //     element: <NavProduct />,
+    //     children: [
+    //         {
+    //             index: true,
+    //             element: <ProductList />
+    //         },
+    //         {
+    //             path: ":id",
+    //             element: <ProductDetail />
+    //         }
+    //     ]
+    // }
+    // bài 05
     {
-        path: "/login",
-        element: <Login />,
-    },
-    {
-        path: "/account",
-        element: (
-            <PrivateRouter>
-                <Account />
-            </PrivateRouter>
-        ),
-    },
-    {
-        path: "/product/:id",
-        element: <ProductDetail />,
-    },
-    {
-        path: "/student/:name",
-        element: <Student />,
-    },
-    {
-        path: "/student",
-        element: <Student03 />,
-    },
-    {
-        path: "/studentName",
-        element: <Student04 />,
-    },
-    {
-        path: "/teams",
-        element: <Teams />,
+        path: "/blog",
+        element: <BlogLayout />,
         children: [
             {
-                index: true,
-                element: <TeamsIndex />,
+                path: "posts",
+                element: <Posts />
             },
             {
-                path: ":teamId",
-                element: <Team />,
-            },
-        ],
-    },
-    {
-        path: "/lazy",
-        element: (
-            <Suspense fallback={<Loading />}>
-                <LazyLoadComp />
-            </Suspense>
-        ),
-    },
+                path: "posts/:id",
+                element: <PostDetail />
+            }
+        ]
+    }
+
+
 ]);
 
 export default routers;
