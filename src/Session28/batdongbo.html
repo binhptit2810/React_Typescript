@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <script>
+      const asynchronous = () => {
+        setTimeout(() => {
+          console.log("1");
+        }, 1000);
+        console.log("2");
+        console.log("3");
+      };
+      asynchronous();
+    </script> -->
+
+    <!-- <script>
+      const getUserName = () => {
+        console.log("Nguyễn Văn A");
+      };
+      // tạo 1 hàm callback
+      const demoCallBack = (callback) => {
+        setTimeout(() => {
+          callback();
+        }, 1000);
+        console.log("1");
+        console.log("2");
+        console.log("3");
+        console.log("4");
+      };
+      demoCallBack(getUserName);
+    </script> -->
+
+    <!-- <script>
+      // tạo promise
+
+      const promise = new Promise((resolve, reject) => {
+        // tạo ra 1 tác vụ mà mất thời gian
+        setTimeout(() => {
+          if (false) {
+            resolve("Nguyễn văn a");
+          } else {
+            reject("Đã có lỗi");
+          }
+        }, 2000);
+      });
+      console.log(promise);
+      // triển khai promise
+      // chạy khi promise thành công hay thất bại
+      promise
+        .then((result) => {
+          console.log("result", result);
+        })
+        .catch((error) => {
+          console.log("error", error);
+        })
+        .finally(() => {
+          // dọn dẹp bộ nhớ
+          console.log("Hoàn thành chương trình");
+        });
+    </script> -->
+    <script>
+      const delayStep = (stepName, delay) => {
+        // tạo promise
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            console.log(`Hoàn thành ${stepName}`);
+            resolve(stepName);
+          });
+        });
+      };
+      //   console.log(delayStep("bước 1", 1000));
+      delayStep("Bước 1", 1000)
+        .then((result) => {
+          console.log("Hoàn thành ", result);
+          return delayStep("Bước 2", 1000);
+        })
+        .then((result2) => {
+          console.log("Hoàn thành ", result2);
+          return delayStep("Bước 3", 1000);
+        })
+        .then((result3) => {
+          console.log("Hoàn thành chuỗi promise : ", result3);
+        })
+        .catch((error) => {
+          console.log("Error ", error);
+        });
+    </script>
+  </body>
+</html>
