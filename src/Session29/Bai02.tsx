@@ -1,30 +1,32 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react";
+
+type ProductType = {
+    id: string;
+    product_name: string;
+    image: string;
+    price: number;
+    created_at: string;
+};
 
 export default function Bai02() {
-    type ProductType = {
-        id: string,
-        product_name: string,
-        image: string,
-        price: number,
-        created_at: string
-    }
-    const [products, setProducts] = useState<ProductType[]>([])
+    const [products, setProducts] = useState<ProductType[]>([]);
+
     const getAllProduct = async () => {
-        fetch("http://localhost:3000/product")
-            .then((response) => response.json())
-            .then((data) => {
-                console.log(data);
-                setProducts(data)
+        try {
+            const response = await fetch("http://localhost:3001/product");
+            const data = await response.json();
+            console.log("API tra ve:", data);
+            setProducts(data);
+        } catch (error) {
+            console.error("Error:", error);
+        }
+    };
 
-            })
-            .catch((error) => console.log("Error", error));
-
-    }
     useEffect(() => {
-        getAllProduct()
-    })
+        getAllProduct();
+    }, []);
 
     return (
-        <div>Bai02</div>
-    )
+        <div>Bài 2</div>
+    );
 }

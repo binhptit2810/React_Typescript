@@ -1,0 +1,157 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "product": [
+    {
+      "id": "1",
+      "product_name": "ao thun",
+      "image": "",
+      "price": 100,
+      "created_at": "2025-04-12"
+    },
+    {
+      "id": "2",
+      "product_name": "ao hoodie",
+      "image": "",
+      "price": 200,
+      "created_at": "2025-04-12"
+    },
+    {
+      "id": "3",
+      "product_name": "ao phong",
+      "image": "",
+      "price": 300,
+      "created_at": "2025-04-12"
+    },
+    {
+      "id": "4",
+      "product_name": "ao thun",
+      "image": "",
+      "price": 100,
+      "created_at": "2025-04-12"
+    },
+    {
+      "id": "5",
+      "product_name": "ao thun",
+      "image": "",
+      "price": 100,
+      "created_at": "2025-04-12"
+    }
+  ],
+  "student": [
+    {
+      "id": "1",
+      "student_name": "Nguyen Van A",
+      "email": "vana@example.com",
+      "address": "Ha Noi",
+      "phone": "0987654321",
+      "status": true,
+      "created_at": "2025-09-16"
+    },
+    {
+      "id": "2",
+      "student_name": "Tran Thi B",
+      "email": "thib@example.com",
+      "address": "Hai Phong",
+      "phone": "0912345678",
+      "status": false,
+      "created_at": "2025-09-16"
+    },
+    {
+      "id": "3",
+      "student_name": "Le Van C",
+      "email": "vanc@example.com",
+      "address": "Da Nang",
+      "phone": "0933334444",
+      "status": true,
+      "created_at": "2025-09-16"
+    },
+    {
+      "id": "4",
+      "student_name": "Pham Thi D",
+      "email": "thid@example.com",
+      "address": "TP HCM",
+      "phone": "0944445555",
+      "status": true,
+      "created_at": "2025-09-16"
+    },
+    {
+      "id": "5",
+      "student_name": "Hoang Van E",
+      "email": "vane@example.com",
+      "address": "Can Tho",
+      "phone": "0955556666",
+      "status": false,
+      "created_at": "2025-09-16"
+    },
+    {
+      "id": 6,
+      "student_name": "Nguyen Van F",
+      "email": "vanf@example.com",
+      "address": "Hue",
+      "phone": "0977778888",
+      "status": true,
+      "created_at": "2025-09-16"
+    },
+    {
+      "id": 6,
+      "student_name": "Nguyen Van F",
+      "email": "vanf@example.com",
+      "address": "Hue",
+      "phone": "0977778888",
+      "status": true,
+      "created_at": "2025-09-16"
+    },
+    {
+      "id": 6,
+      "student_name": "Nguyen Van F",
+      "email": "vanf@example.com",
+      "address": "Hue",
+      "phone": "0977778888",
+      "status": true,
+      "created_at": "2025-09-16"
+    },
+    {
+      "id": 6,
+      "student_name": "Nguyen Van F",
+      "email": "vanf@example.com",
+      "address": "Hue",
+      "phone": "0977778888",
+      "status": true,
+      "created_at": "2025-09-16"
+    },
+    {
+      "id": 6,
+      "student_name": "Nguyen Van F",
+      "email": "vanf@example.com",
+      "address": "Hue",
+      "phone": "0977778888",
+      "status": true,
+      "created_at": "2025-09-16"
+    },
+    {
+      "id": 6,
+      "student_name": "Nguyen Van F",
+      "email": "vanf@example.com",
+      "address": "Hue",
+      "phone": "0977778888",
+      "status": true,
+      "created_at": "2025-09-16"
+    }
+  ]
+}
